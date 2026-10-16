@@ -1,0 +1,331 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f6f5ef">
+  <meta name="description" content="Explore Neha Shukla's professional profiles and portfolio.">
+  <title>Neha Shukla | My Links</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --green: #254638;
+      --green-light: #e8eee7;
+      --cream: #f6f5ef;
+      --text: #25332b;
+      --muted: #7d857c;
+      --line: #e8e8df;
+    }
+
+    body {
+      min-height: 100vh;
+      padding: 28px 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background:
+        radial-gradient(ellipse at 10% 10%, #e6eadf 0, transparent 38%),
+        radial-gradient(ellipse at 95% 90%, #e9e5d9 0, transparent 35%),
+        var(--cream);
+      color: var(--text);
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 410px;
+      padding: 36px 28px 25px;
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid rgba(255, 255, 255, 0.95);
+      border-radius: 26px;
+      box-shadow: 0 20px 65px rgba(40, 58, 44, 0.09);
+      text-align: center;
+      animation: appear 0.6s ease-out both;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 12px;
+      border: 1px solid var(--line);
+      border-radius: 50px;
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      background: #7d9a70;
+      border-radius: 50%;
+    }
+
+    .monogram {
+      width: 82px;
+      height: 82px;
+      margin: 25px auto 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 26px;
+      background: var(--green);
+      color: #f8f5e9;
+      font-family: Georgia, serif;
+      font-size: 34px;
+      letter-spacing: -2px;
+      box-shadow: 0 9px 22px rgba(37, 70, 56, 0.18);
+      transform: rotate(-3deg);
+    }
+
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(29px, 8vw, 36px);
+      font-weight: 500;
+      letter-spacing: -1.1px;
+    }
+
+    .intro {
+      max-width: 280px;
+      margin: 12px auto 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .divider {
+      width: 38px;
+      height: 2px;
+      margin: 23px auto;
+      background: #a6b39f;
+      border-radius: 10px;
+    }
+
+    .section-label {
+      margin-bottom: 13px;
+      color: #8b9087;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-align: left;
+    }
+
+    .links {
+      display: grid;
+      gap: 11px;
+    }
+
+    .link {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-height: 64px;
+      padding: 12px 15px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: #fff;
+      color: var(--text);
+      text-align: left;
+      text-decoration: none;
+      transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .link:hover,
+    .link:focus-visible {
+      transform: translateY(-3px);
+      border-color: #b9c8b7;
+      background: #fbfcf8;
+      box-shadow: 0 7px 20px rgba(37, 70, 56, 0.07);
+      outline: none;
+    }
+
+    .icon-box {
+      width: 39px;
+      height: 39px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      background: var(--green-light);
+      color: var(--green);
+    }
+
+    .icon-box svg {
+      width: 20px;
+      height: 20px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .link-copy {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .link-title {
+      display: block;
+      font-size: 14px;
+      font-weight: 650;
+    }
+
+    .link-subtitle {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .arrow {
+      color: #99a397;
+      font-size: 20px;
+      transition: transform 0.2s ease;
+    }
+
+    .link:hover .arrow {
+      transform: translate(2px, -2px);
+      color: var(--green);
+    }
+
+    .footer {
+      margin-top: 24px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: #92958c;
+      font-size: 11px;
+      letter-spacing: 0.3px;
+    }
+
+    .footer span {
+      color: var(--green);
+    }
+
+    @keyframes appear {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .card { padding: 28px 19px 21px; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="card">
+    <div class="eyebrow">
+      <span class="status-dot"></span>
+      CONNECT WITH ME
+    </div>
+
+    <div class="monogram" aria-hidden="true">NS</div>
+
+    <h1>Neha Shukla</h1>
+
+    <p class="intro">
+      Turning ideas into things that work.
+      <br>
+      AI · Generative AI · Applied ML
+    </p>
+
+    <div class="divider"></div>
+
+    <p class="section-label">FIND ME ONLINE</p>
+
+    <nav class="links" aria-label="Professional links">
+
+      <a class="link"
+         href="https://github.com/neha060314"
+         target="_blank" rel="noopener noreferrer">
+        <span class="icon-box">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 6v-3.9a3.4 3.4 0 0 0-.9-2.7c3-.3 6.2-1.5 6.2-7A5.5 5.5 0 0 0 18.8 4.6 5.1 5.1 0 0 0 18.7 1S17.5.7 15 2.6a13.5 13.5 0 0 0-7 0C5.5.7 4.3 1 4.3 1a5.1 5.1 0 0 0-.1 3.6A5.5 5.5 0 0 0 2.7 7.4c0 5.5 3.2 6.7 6.2 7A3.4 3.4 0 0 0 8 17.1V22"/>
+          </svg>
+        </span>
+        <span class="link-copy">
+          <span class="link-title">GitHub</span>
+          <span class="link-subtitle">Projects & code</span>
+        </span>
+        <span class="arrow" aria-hidden="true">↗</span>
+      </a>
+
+      <a class="link"
+         href="https://www.linkedin.com/in/neha-shukla-/"
+         target="_blank" rel="noopener noreferrer">
+        <span class="icon-box">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6Z"/>
+            <rect x="2" y="9" width="4" height="12" rx="1"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+        </span>
+        <span class="link-copy">
+          <span class="link-title">LinkedIn</span>
+          <span class="link-subtitle">Let's connect professionally</span>
+        </span>
+        <span class="arrow" aria-hidden="true">↗</span>
+      </a>
+
+      <a class="link"
+         href="https://neha-shukla.ai.studio"
+         target="_blank" rel="noopener noreferrer">
+        <span class="icon-box">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10Z"/>
+          </svg>
+        </span>
+        <span class="link-copy">
+          <span class="link-title">My Portfolio</span>
+          <span class="link-subtitle">A closer look at my work</span>
+        </span>
+        <span class="arrow" aria-hidden="true">↗</span>
+      </a>
+
+      <a class="link"
+         href="mailto:neha14581shukla@gmail.com">
+        <span class="icon-box">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="2" y="4" width="20" height="16" rx="3"/>
+            <path d="m3 6 9 7 9-7"/>
+          </svg>
+        </span>
+        <span class="link-copy">
+          <span class="link-title">Email Me</span>
+          <span class="link-subtitle">Have an opportunity in mind?</span>
+        </span>
+        <span class="arrow" aria-hidden="true">↗</span>
+      </a>
+
+    </nav>
+
+    <footer>
+      Built with intention <span>✳</span> Shared with you
+    </footer>
+  </main>
+</body>
+</html>
